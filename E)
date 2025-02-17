@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static string ConcatenarStrings(List<string> listaDeStrings)
+    {
+        return string.Join("", listaDeStrings);
+    }
+
+    static void Main()
+    {
+        List<string> lista = new List<string>();
+
+        Console.WriteLine("Digite palavras para adicionar à lista (digite 'fim' para parar):");
+
+        while (true)
+        {
+            string entrada = Console.ReadLine();
+            if (entrada.ToLower() == "fim")
+            {
+                break;
+            }
+
+            lista.Add(entrada);
+        }
+
+        string resultado = ConcatenarStrings(lista);
+        Console.WriteLine($"A string concatenada é: {resultado}");
+    }
+}
