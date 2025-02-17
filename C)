@@ -1,0 +1,21 @@
+using System;
+
+class Program
+{
+    static int Somar(int numero1, int numero2)
+    {
+        return numero1 + numero2;
+    }
+
+    static void Main()
+    {
+        Console.Write("Digite o primeiro número: ");
+        int numero1 = int.Parse(Console.ReadLine());
+
+        Console.Write("Digite o segundo número: ");
+        int numero2 = int.Parse(Console.ReadLine());
+
+        int resultado = Somar(numero1, numero2);
+        Console.WriteLine($"A soma de {numero1} e {numero2} é: {resultado}");
+    }
+}
