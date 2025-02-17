@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static int ContarCaracteres(string texto)
+    {
+        return texto.Length;
+    }
+
+    static void Main()
+    {
+        Console.Write("Digite uma palavra ou frase: ");
+        string texto = Console.ReadLine();
+
+        int numeroDeCaracteres = ContarCaracteres(texto);
+        Console.WriteLine($"O número de caracteres na string é: {numeroDeCaracteres}");
+    }
+}
