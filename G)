@@ -1,0 +1,25 @@
+using System;
+
+class Program
+{
+    static string CaracteresPosicoesImpares(string texto)
+    {
+        string resultado = "";
+        
+        for (int i = 1; i < texto.Length; i += 2)
+        {
+            resultado += texto[i];
+        }
+        
+        return resultado;
+    }
+
+    static void Main()
+    {
+        Console.Write("Digite uma string: ");
+        string texto = Console.ReadLine();
+
+        string resultado = CaracteresPosicoesImpares(texto);
+        Console.WriteLine($"A nova string com caracteres nas posições ímpares é: {resultado}");
+    }
+}
