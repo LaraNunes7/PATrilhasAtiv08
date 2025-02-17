@@ -1,0 +1,18 @@
+using System;
+
+class Program
+{
+    static int Quadrado(int numero)
+    {
+        return numero * numero;
+    }
+
+    static void Main()
+    {
+        Console.Write("Digite um número inteiro: ");
+        int numero = int.Parse(Console.ReadLine());
+
+        int resultado = Quadrado(numero);
+        Console.WriteLine($"O quadrado de {numero} é {resultado}");
+    }
+}
