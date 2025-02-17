@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static int MenorNumero(List<int> numeros)
+    {
+        if (numeros.Count == 0)
+        {
+            throw new ArgumentException("A lista não pode estar vazia.");
+        }
+
+        int menor = numeros[0];
+
+        foreach (int numero in numeros)
+        {
+            if (numero < menor)
+            {
+                menor = numero;
+            }
+        }
+
+        return menor;
+    }
+
+    static void Main()
+    {
+        List<int> numeros = new List<int>();
+
+        Console.WriteLine("Digite números inteiros (digite 'fim' para parar):");
+
+        while (true)
+        {
+            string entrada = Console.ReadLine();
+            if (entrada.ToLower() == "fim")
+            {
+                break;
+            }
+
+            if (int.TryParse(entrada, out int numero))
+            {
+                numeros.Add(numero);
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida! Por favor, digite um número inteiro.");
+            }
+        }
+
+        if (numeros.Count > 0)
+        {
+            int menor = MenorNumero(numeros);
+            Console.WriteLine($"O menor número da lista é: {menor}");
+        }
+        else
+        {
+            Console.WriteLine("Nenhum número foi inserido.");
+        }
+    }
+}
