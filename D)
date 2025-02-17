@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static int MaiorNumero(List<int> numeros)
+    {
+        if (numeros.Count == 0)
+        {
+            throw new ArgumentException("A lista não pode estar vazia.");
+        }
+
+        int maior = numeros[0];
+
+        foreach (int numero in numeros)
+        {
+            if (numero > maior)
+            {
+                maior = numero;
+            }
+        }
+
+        return maior;
+    }
+
+    static void Main()
+    {
+        List<int> numeros = new List<int>();
+
+        Console.WriteLine("Digite números inteiros (digite 'fim' para parar):");
+
+        while (true)
+        {
+            string entrada = Console.ReadLine();
+            if (entrada.ToLower() == "fim")
+            {
+                break;
+            }
+
+            if (int.TryParse(entrada, out int numero))
+            {
+                numeros.Add(numero);
+            }
+            else
+            {
+                Console.WriteLine("Entrada inválida! Por favor, digite um número inteiro.");
+            }
+        }
+
+        if (numeros.Count > 0)
+        {
+            int maiorNumero = MaiorNumero(numeros);
+            Console.WriteLine($"O maior número da lista é: {maiorNumero}");
+        }
+        else
+        {
+            Console.WriteLine("Nenhum número foi inserido.");
+        }
+    }
+}
